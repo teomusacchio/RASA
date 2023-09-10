@@ -2,29 +2,32 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: percorso felice
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: saluto
+  - action: utter_saluto
+  - intent: umore_positivo
+  - action: utter_contento
 
-- story: sad path 1
+- story: percorso triste
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: saluto
+  - action: utter_saluto
+  - intent: umore_negativo
+  - action: utter_conforto
 
-- story: sad path 2
+- story: conferma dopo conforto
   steps:
-  - intent: greet
+  - intent: saluto
+  - action: utter_saluto
+  - intent: umore_negativo
+  - action: utter_conforto
+  - intent: conferma
+  - action: utter_felice
+ 
+- story: percorso triste
+  steps:
+  - intent: saluto
+  - action: utter_addio
+  - intent: umore_positivo
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye

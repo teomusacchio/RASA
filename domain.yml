@@ -1,34 +1,40 @@
 version: "3.1"
 
 intents:
-  - greet
+  - saluto
+  - addio
+  - contento
+  - conforto
+  - felice
+  - umore_positivo
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
+  - bot_challange
+  - umore_negativo
+  - conferma
+  - rifiuto 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  utter_saluto:
+    - text: "Ciao! Come posso aiutarti oggi?"
+  utter_addio:
+    - text: "Arrivederci! A presto."
+  utter_contento:
+    - text: "Sono felice di sentire che stai bene!"
+  utter_conforto:
+    - text: "Mi dispiace sentire che non stai bene. Posso aiutarti in qualche modo?"
+  utter_felice:
+    - text: "Sono contento di aver potuto aiutarti!"
   utter_goodbye:
-  - text: "Bye"
-
+    - text: "Arrivederci!"
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "Sì, sono un bot!"
+  utter_greet:
+    - text: "Ciao! Come posso aiutarti?"
+actions:
+  - utter_saluto
+  - utter_addio
+  - utter_contento
+  - utter_conforto
+  - utter_felice
+  - utter_goodbye
+  - utter_iamabot
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true

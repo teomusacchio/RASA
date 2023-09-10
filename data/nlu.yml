@@ -1,91 +1,69 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: saluto
   examples: |
+    - ciao
+    - salve
+    - buongiorno
+    - buona sera
     - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - ei ciao
 
-- intent: goodbye
+- intent: addio
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - arrivederci
+    - ciao ciao
+    - a presto
+    - ci vediamo
+    - addio
 
-- intent: affirm
+- intent: conferma
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - sì
+    - certo
+    - assolutamente
+    - esatto
 
-- intent: deny
+- intent: rifiuto
   examples: |
     - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - non penso
+    - assolutamente no
+    - neanche per sogno
 
-- intent: mood_great
+- intent: umore_positivo
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - sto bene
+    - sono felice
+    - tutto perfetto
+    - sono contento
 
-- intent: mood_unhappy
+- intent: umore_negativo
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - sto male
+    - sono triste
+    - non sto bene
+    - sono sconsolato
 
-- intent: bot_challenge
+- intent: conforto
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - non ti preoccupare
+    - stai tranquillo che passerà
+    - sono cose che capitano
+    - può succedere a chiunque
+
+- intent: contento
+  examples: |
+    - sto da dio
+    - mai stato più felice
+    - questa cosa mi fa star bene
+    - la vita è meravigliosa
+
+- intent: felice
+  examples: |
+    - la vita è la cosa più bella del mondo
+    - non sto dalla pelle per la felicità
+    - ho vinto la lotteria
+    - mi sento in paradiso
+    
