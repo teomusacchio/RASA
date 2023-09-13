@@ -1,8 +1,9 @@
+---
 version: "3.1"
 
 nlu:
-- intent: saluto
-  examples: |
+ - intent: saluto
+   examples: |
     - ciao
     - salve
     - buongiorno
@@ -10,60 +11,98 @@ nlu:
     - hey
     - ei ciao
 
-- intent: addio
-  examples: |
+ - intent: addio
+   examples: |
     - arrivederci
     - ciao ciao
     - a presto
     - ci vediamo
     - addio
 
-- intent: conferma
-  examples: |
+ - intent: conferma
+   examples: |
     - sì
     - certo
     - assolutamente
     - esatto
 
-- intent: rifiuto
-  examples: |
+ - intent: rifiuto
+   examples: |
     - no
     - non penso
     - assolutamente no
     - neanche per sogno
 
-- intent: umore_positivo
-  examples: |
+ - intent: umore_positivo
+   examples: |
     - sto bene
     - sono felice
     - tutto perfetto
     - sono contento
 
-- intent: umore_negativo
-  examples: |
+ - intent: umore_negativo
+   examples: |
     - sto male
     - sono triste
     - non sto bene
     - sono sconsolato
 
-- intent: conforto
-  examples: |
+ - intent: conforto
+   examples: |
     - non ti preoccupare
     - stai tranquillo che passerà
     - sono cose che capitano
     - può succedere a chiunque
 
-- intent: contento
-  examples: |
+ - intent: contento
+   examples: |
     - sto da dio
     - mai stato più felice
     - questa cosa mi fa star bene
     - la vita è meravigliosa
 
-- intent: felice
-  examples: |
+ - intent: felice
+   examples: |
     - la vita è la cosa più bella del mondo
     - non sto dalla pelle per la felicità
     - ho vinto la lotteria
-    - mi sento in paradiso
-    
+    - mi sento in paradis
+
+ - intent: ask_geografia
+   examples: |
+    - Parlami della posizione geografica di Campomarino
+    - dove si trova campomarino?
+ - intent: ask_popolazione
+   examples: |
+    - Quanti abitanti ha Campomarino?
+    - Parlami della popolazione di Campomarino
+ - intent: ask_mission
+   examples: |
+    - Qual'è la mission della scuola?
+    - Qual'è l amission dell'Omnicomprensivo di Campomarino?
+    - La scuola ha una mission?
+    - Mi parli ora della mission della scuola
+ - intent: ask_dirigente
+   examples: |
+    - Chi è il dirigente scolastico?
+    - Come si chiama il preside?
+    - Chi è l'attuale dirigente scolstico?
+    - Mi puoi fornire il nome del dirigente scolastico?
+    - Ho bisogno di sapere chi dirige la scuola nell'anno scolastico 2023/24
+ - intent: ask_organizzazione
+   examples: |
+    - Com'è l'organizzazione della scuola?
+    - Di quanti istituti è composta la scuola?
+    - Quali sono gli ordini di scuola presso l'Omnicomprensivo?
+    - Com'è organizzata la scuola?
+ - intent: ask_primaria
+   examples: |
+    - Come è costituita la scuola Primaria?
+    - Quale è la denominaione della primaria?
+    - Quanti plessi ha la primaria?
+    - Su quante scuole si divide la primaria?
+ - intent: ask_indirizzo_musicale
+   examples: |
+     - Cosa si intende per indirizzo musicale?
+     - Quali strumenti si insegnano?
+     - Quale indirizzo c'è nella scuola secondaria di 1° grado

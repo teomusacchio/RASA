@@ -1,5 +1,5 @@
+---
 version: "3.1"
-
 intents:
   - saluto
   - addio
@@ -11,7 +11,14 @@ intents:
   - bot_challange
   - umore_negativo
   - conferma
-  - rifiuto 
+  - rifiuto
+  - ask_geografia
+  - ask_popolazione
+  - ask_mission
+  - ask_dirigente
+  - ask_organizzazione
+  - ask_primaria
+  - ask_indirizzo_musicale
 responses:
   utter_saluto:
     - text: "Ciao! Come posso aiutarti oggi?"
@@ -20,7 +27,8 @@ responses:
   utter_contento:
     - text: "Sono felice di sentire che stai bene!"
   utter_conforto:
-    - text: "Mi dispiace sentire che non stai bene. Posso aiutarti in qualche modo?"
+    - text: "Mi dispiace sentire che non stai bene
+      Posso aiutarti in qualche modo?"
   utter_felice:
     - text: "Sono contento di aver potuto aiutarti!"
   utter_goodbye:
@@ -29,6 +37,74 @@ responses:
     - text: "Sì, sono un bot!"
   utter_greet:
     - text: "Ciao! Come posso aiutarti?"
+  utter_popolazione:
+    - text: "Il Comune di Campomarino ha una popolazione che supera
+      i 7000 abitanti,i
+      dei quali il 10% è bilingue, avendo origini arberesh"
+  utter_geografia:
+    - text: "L'istituto di Campomarino opera in una realtà della regione Molise
+      privilegiata per la sua posizione geografica.
+      Si trova in una zona prevalentemente pianeggiante
+      delimitata dal mare Adriatico ad Est ed attraversata
+      dal fiume Biferno a Nord."
+  utter_mission:
+    - text: " La scuola promuove la maturazione complessiva
+      della personalità dell'alunno.Fornisce conoscenze, competenze
+      e strumenti per cogliere le opportunità e superare le difficoltà
+      e le criticità della realtà in cui vive."
+  utter_dirigente:
+    - text: "Il dirigente scolastico della scuola Omnicomprensivo
+      di Campomarino, nell'
+      anno scolastico 2022/23 è il Dr Teodoro Musacchio.
+      Il Preside sta in servizio in questa scuola
+      dall'anno 2o12/13 e rimarrà in servizio fino al
+      termmine dell'anno scolastico 2023/24"
+  utter_organizzazione:
+    - text: "La nostra Scuola è un Istituto Omnicomprensivo
+      che contempla la scuola dell’Infanzia, la scuola Primaria
+      la scuola Secondaria di I grado e l’Istituto Professionale
+      per i servizi commerciali e socio-sanitari ed accoglie
+      complessivamente 642 alunni. La sua organizzazione consente
+      di programmare le attività didattico-educative in modoLa nostra
+      Scuola è un Istituto Omnicomprensivo, che contempla la
+      scuola dell’Infanzia, la scuola Primaria, la scuola Secondaria
+      di I grado e l’Istituto Professionale per i servizi commerciali
+      e socio-sanitari ed accoglie complessivamente 642 alunni.
+      La sua organizzazione consente di programmare le attività
+      didattico-educative in modo funzionale e unitario e permette,
+      inoltre, di rispondere meglio ai bisogni formativi degli alunni,
+      della comunità e del territorio. Nel contempo consente di coordinare
+      gli orari, di utilizzare meglio locali, servizi e attrezzature
+      delle scuole e offre la possibilità di realizzare la continuità
+      educativa, promuovendo la realizzazione e l’orientamento
+      di ogni alunno.funzionale e unitario e permette, inoltre,
+      di rispondere meglio ai bisogni formativi degli alunni,
+      della comunità e del territorio. Nel contempo consente
+      di coordinare gli orari, di utilizzare meglio locali,
+      servizi e attrezzature delle scuole e offre la
+      possibilità di realizzare la continuità educativa,
+      promuovendo la realizzazione e l’orientamento di ogni alunno."
+  utter_primaria:
+    - text: "La scuola primaria “ F. Jovine” e “B.Jacovitti”
+     Scuola primaria “ F. Jovine” e “B.Jacovitti”.
+     È costituita da una sede centrale sita a Campomarino
+     in via Cuoco ed una “succursale” a Nuova Cliternia.
+     Il numero totale degli alunni è di 309 unità.
+     L’edificio della Scuola Primaria “F. Jovine”
+     di Campomarino ospita tre classi prime,
+     tre seconde, tre terze, tre quarte e tre classi quinte.
+     L’edificio della Scuola Primaria “Jacovitti”
+     di Nuova Cliternia ha una sola sezione per ogni classe.
+     Il numero totale degli insegnanti è di 42 unità
+     comprensive di 10 insegnanti di sostegno e tre di religione.
+      L’orario si sviluppa per 30 ore in 5
+      giorni secondo le seguenti modalità:
+        LUNEDÌ - SABATO ORE 8.00 - 14.00.
+        (Dellibera Collegio dei Docenti, n. 6 del 1° settembre 2022)"
+  utter_indirizzo_musicale:
+    - text: " La Scuola Secondaria di Primo
+      Grado dell'Istituto Omnicomprensivo C. A.
+      Carriero è ad indirizzo musicale dal 2007."
 actions:
   - utter_saluto
   - utter_addio
@@ -36,5 +112,11 @@ actions:
   - utter_conforto
   - utter_felice
   - utter_goodbye
-  - utter_iamabot
-
+  - utter_iamaboti
+  - utter_geografia
+  - utter_popolazione
+  - utter_mission
+  - utter_dirigente
+  - utter_organizzazione
+  - utter_primaria
+  - utter_strumento_musicale

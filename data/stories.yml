@@ -1,33 +1,57 @@
-version: "3.1"
-
+---
 stories:
+  - story: percorso felice
+    steps:
+      - intent: saluto
+      - action: utter_saluto
+      - intent: umore_positivo
+      - action: utter_contento
+  - story: percorso triste
+    steps:
+      - intent: saluto
+      - action: utter_saluto
+      - intent: umore_negativo
+      - action: utter_conforto
+  - story: conferma dopo conforto
+    steps:
+      - intent: saluto
+      - action: utter_saluto
+      - intent: umore_negativo
+      - action: utter_conforto
+      - intent: conferma
+      - action: utter_felice
+  - story: percorso triste
+    steps:
+      - intent: saluto
+      - action: utter_addio
+      - intent: umore_positivo
+      - action: utter_greet
+  - story: Chiedi della geofrafia di Campomarino
+    steps:
+      - intent: ask_geografia
+      - action: utter_geografia
+  - story: Chiedi della popolazione di Campomarino
+    steps:
+      - intent: ask_popolazione
+      - action: utter_popolazione
+  - story: Chiedi della mission della Scuola di Campomarino
+    steps:
+      - intent: ask_mission
+      - action: utter_mission
+  - story: Chiedi chi è il dirigente scolastico
+    steps:
+      - intent: ask_dirigente
+      - action: utter_dirigente
+  - story: Chiedi dell'organizzazione
+    steps:
+      - intent: ask_organizzazione
+      - action: utter_organizzazione
+  - story: chiedi della primaria
+    steps:
+      - intent: ask_primaria
+      - action: utter_primaria
+  - story: chiedi sull'indirizzo musicale
+    steps:
+      - intent: ask_indirizzo_musicale
+      - action: utter_indirizzo_musicale
 
-- story: percorso felice
-  steps:
-  - intent: saluto
-  - action: utter_saluto
-  - intent: umore_positivo
-  - action: utter_contento
-
-- story: percorso triste
-  steps:
-  - intent: saluto
-  - action: utter_saluto
-  - intent: umore_negativo
-  - action: utter_conforto
-
-- story: conferma dopo conforto
-  steps:
-  - intent: saluto
-  - action: utter_saluto
-  - intent: umore_negativo
-  - action: utter_conforto
-  - intent: conferma
-  - action: utter_felice
- 
-- story: percorso triste
-  steps:
-  - intent: saluto
-  - action: utter_addio
-  - intent: umore_positivo
-  - action: utter_greet
