@@ -19,6 +19,9 @@ intents:
   - ask_organizzazione
   - ask_primaria
   - ask_indirizzo_musicale
+  - perchè_strumento
+  - istituto_professionale
+  - orientamento
 responses:
   utter_saluto:
     - text: "Ciao! Come posso aiutarti oggi?"
@@ -105,6 +108,33 @@ responses:
     - text: " La Scuola Secondaria di Primo
       Grado dell'Istituto Omnicomprensivo C. A.
       Carriero è ad indirizzo musicale dal 2007."
+  utter_perchè_strumento:
+    - text: "lo strumento musicale promuove la formazione
+      globale dell’individuo attraverso un’esperienza musicale
+      resa più completa dallo studio di uno strumento,
+      offrendo occasioni di maturazione logica,
+      espressiva e comunicativa; integra il modello
+      curricolare con percorsi disciplinari intesi
+      a sviluppare, nei processi evolutivi dell’alunno,
+      unitamente alla dimensione cognitiva, la dimensione
+      pratico-operativa, estetico-emotiva,
+      improvvisativo- compositiva"
+  utter_professionale:
+    - text: "L’Istituto Professionale per i servizi commerciali
+      è costituito da una sede in via Cuoco. Ospita attualmente due classi,
+      una classe terza e una classe di quarta
+      per un numero complessivo di 24 alunni.
+      L’orario è articolato  per un totale di 32
+      ore dal Lunedì al Venerdì secondo la seguente
+      modalità: Lunedì - Venerdì: ore 8.00 - 14.00.
+        Mercoledì ore 15.00 - 17.00
+Codice: CBRC05000A"
+  utter_orientamento:
+    - text: "Una scuola capace di orientare attraverso
+      la conoscenza del sé, delle proprie attitudini,
+      delle aspirazioni e capace di aprirsi al mondo
+      entrando in relazione positiva con le opportunità
+      del territorio e della comunità umana"
 actions:
   - utter_saluto
   - utter_addio
@@ -120,3 +150,6 @@ actions:
   - utter_organizzazione
   - utter_primaria
   - utter_strumento_musicale
+  - utter_perchè_strumento
+  - utter_professionale
+  - utter_orientamento

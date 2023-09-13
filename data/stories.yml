@@ -54,4 +54,15 @@ stories:
     steps:
       - intent: ask_indirizzo_musicale
       - action: utter_indirizzo_musicale
-
+  - story: chiedi perchè studiare lo strumento muscicale
+    steps:
+      - intent: perchè_strumento
+      - action: utter_perchè_strumento
+  - story: come è composto il professionale?
+    steps:
+      - intent: istituto_professionale
+      - action: utter_professionale
+  - story: chiedi dell'orientamento a scuola
+    steps:
+      - intent: orientamento
+      - action: utter_orientamento

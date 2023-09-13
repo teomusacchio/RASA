@@ -105,4 +105,20 @@ nlu:
    examples: |
      - Cosa si intende per indirizzo musicale?
      - Quali strumenti si insegnano?
-     - Quale indirizzo c'è nella scuola secondaria di 1° grado
+ - intent: perchè_strumento
+   examples: |
+     - perchè conviene studiare lo strumento musicale?
+     - in che modo lo strumento musicale
+       constribuisce allo sviluppo psicofisico dei ragazzi?
+     - quali sono le motivazioni dell'indirizzo di strumento musicale?
+     - in che cosa si arricchisce il curricolo con strumento?
+ - intent: istituto_professionale
+   examples: |
+     - come è costituito l'istituto professionale?
+     - quanti alunni ci sono al professionale?
+     - quante classi compongono l'istituto professional?
+ - intent: orientamento
+   examples: |
+     - cosa si intende per orientamento?
+     - cosa fa la scuola per l'orientamento
+     - perchè è importante che la scuola attivi l'orientamento?
