@@ -1,5 +1,6 @@
 ---
 version: "3.1"
+
 intents:
   - saluto
   - addio
@@ -22,6 +23,19 @@ intents:
   - perchè_strumento
   - istituto_professionale
   - orientamento
+  - ask_about_person
+  - chiedi_persona
+
+entities:
+  - person_name
+
+slots:
+  person_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: person_name
+
 responses:
   utter_saluto:
     - text: "Ciao! Come posso aiutarti oggi?"
@@ -29,7 +43,7 @@ responses:
     - text: "Arrivederci! A presto."
   utter_contento:
     - text: "Sono felice di sentire che stai bene!"
-  utter_conforto:
+  utvvvvter_conforto:
     - text: "Mi dispiace sentire che non stai bene
       Posso aiutarti in qualche modo?"
   utter_felice:
@@ -72,38 +86,13 @@ responses:
       Scuola è un Istituto Omnicomprensivo, che contempla la
       scuola dell’Infanzia, la scuola Primaria, la scuola Secondaria
       di I grado e l’Istituto Professionale per i servizi commerciali
-      e socio-sanitari ed accoglie complessivamente 642 alunni.
-      La sua organizzazione consente di programmare le attività
-      didattico-educative in modo funzionale e unitario e permette,
-      inoltre, di rispondere meglio ai bisogni formativi degli alunni,
-      della comunità e del territorio. Nel contempo consente di coordinare
-      gli orari, di utilizzare meglio locali, servizi e attrezzature
-      delle scuole e offre la possibilità di realizzare la continuità
-      educativa, promuovendo la realizzazione e l’orientamento
-      di ogni alunno.funzionale e unitario e permette, inoltre,
-      di rispondere meglio ai bisogni formativi degli alunni,
-      della comunità e del territorio. Nel contempo consente
-      di coordinare gli orari, di utilizzare meglio locali,
-      servizi e attrezzature delle scuole e offre la
-      possibilità di realizzare la continuità educativa,
-      promuovendo la realizzazione e l’orientamento di ogni alunno."
+      e socio-sanitari ed accoglie complessivamente 642 alunni."
   utter_primaria:
     - text: "La scuola primaria “ F. Jovine” e “B.Jacovitti”
      Scuola primaria “ F. Jovine” e “B.Jacovitti”.
      È costituita da una sede centrale sita a Campomarino
      in via Cuoco ed una “succursale” a Nuova Cliternia.
-     Il numero totale degli alunni è di 309 unità.
-     L’edificio della Scuola Primaria “F. Jovine”
-     di Campomarino ospita tre classi prime,
-     tre seconde, tre terze, tre quarte e tre classi quinte.
-     L’edificio della Scuola Primaria “Jacovitti”
-     di Nuova Cliternia ha una sola sezione per ogni classe.
-     Il numero totale degli insegnanti è di 42 unità
-     comprensive di 10 insegnanti di sostegno e tre di religione.
-      L’orario si sviluppa per 30 ore in 5
-      giorni secondo le seguenti modalità:
-        LUNEDÌ - SABATO ORE 8.00 - 14.00.
-        (Dellibera Collegio dei Docenti, n. 6 del 1° settembre 2022)"
+     Il numero totale degli alunni è di 309 "
   utter_indirizzo_musicale:
     - text: " La Scuola Secondaria di Primo
       Grado dell'Istituto Omnicomprensivo C. A.
@@ -113,12 +102,7 @@ responses:
       globale dell’individuo attraverso un’esperienza musicale
       resa più completa dallo studio di uno strumento,
       offrendo occasioni di maturazione logica,
-      espressiva e comunicativa; integra il modello
-      curricolare con percorsi disciplinari intesi
-      a sviluppare, nei processi evolutivi dell’alunno,
-      unitamente alla dimensione cognitiva, la dimensione
-      pratico-operativa, estetico-emotiva,
-      improvvisativo- compositiva"
+      espressiva e comunicativa;"
   utter_professionale:
     - text: "L’Istituto Professionale per i servizi commerciali
       è costituito da una sede in via Cuoco. Ospita attualmente due classi,
@@ -135,6 +119,10 @@ Codice: CBRC05000A"
       delle aspirazioni e capace di aprirsi al mondo
       entrando in relazione positiva con le opportunità
       del territorio e della comunità umana"
+  utter_default:
+    - text: "Mi scuso, su questo non so cosa risponderti.
+      Puoi ripetere o fare una domanda diversa?"
+
 actions:
   - utter_saluto
   - utter_addio
@@ -142,7 +130,7 @@ actions:
   - utter_conforto
   - utter_felice
   - utter_goodbye
-  - utter_iamaboti
+  - utter_iamabot
   - utter_geografia
   - utter_popolazione
   - utter_mission
@@ -153,3 +141,6 @@ actions:
   - utter_perchè_strumento
   - utter_professionale
   - utter_orientamento
+  - action_give_info_about_mario
+  - action_unknown_person
+  - action_check_person_name

@@ -66,3 +66,7 @@ stories:
     steps:
       - intent: orientamento
       - action: utter_orientamento
+  - story: Chiedi informazioni su una persona
+    steps:
+      - intent: chiedi_persona
+      - action: action_check_person_name

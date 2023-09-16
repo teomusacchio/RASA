@@ -122,3 +122,14 @@ nlu:
      - cosa si intende per orientamento?
      - cosa fa la scuola per l'orientamento
      - perchè è importante che la scuola attivi l'orientamento?
+ - intent: chiedi_persona
+   examples: |
+     - chi è [Mario Rossi](person_name)?
+     - dimmi di più su [Anna Bianchi] (person_name)?
+     - hai informazioni su [Giovanni Verde](person_name)?
+     - conosci [Francesca Neri](person_name)?
+     - mi sai die qualcosa di [Andrea Galuzzo](person_name)?
+     - parlami di [Asdrubale Gaduzzo](person_name)?
+     - hai sentito parlare di [Guglielmo Serio](person_name)?
+     - mi fornisci informazioni su [Michelangelo Cane] (person_name)?
+     - la sai l'ultima su [Finisberto Tremonti] (person_name)?
