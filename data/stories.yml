@@ -1,17 +1,18 @@
 ---
+version: '3.1'
 stories:
   - story: percorso felice
     steps:
       - intent: saluto
       - action: utter_saluto
-      - intent: umore_positivo
-      - action: utter_contento
   - story: percorso triste
     steps:
       - intent: saluto
       - action: utter_saluto
       - intent: umore_negativo
       - action: utter_conforto
+      - intent: addio
+      - action: utter_addio
   - story: conferma dopo conforto
     steps:
       - intent: saluto
@@ -20,10 +21,12 @@ stories:
       - action: utter_conforto
       - intent: conferma
       - action: utter_felice
+      - intent: addio
+      - action: utter_addio
   - story: percorso triste
     steps:
       - intent: saluto
-      - action: utter_addio
+      - action: utter_saluto
       - intent: umore_positivo
       - action: utter_greet
   - story: Chiedi della geofrafia di Campomarino
@@ -68,5 +71,22 @@ stories:
       - action: utter_orientamento
   - story: Chiedi informazioni su una persona
     steps:
+      - action: action_reset_all_slots
       - intent: chiedi_persona
       - action: action_check_person_name
+  - story: conforta per un malessere
+    steps:
+      - intent: conforto
+      - action: utter_conforto
+  - story: esprimere contentezza
+    steps:
+      - intent: contento
+      - action: utter_contento
+  - story: esprimi felicità
+    steps:
+      - intent: felice
+      - action: utter_felice
+  - story: esprimi rifiuto
+    steps:
+      - intent: rifiuto
+      - action: utter_rifiuto

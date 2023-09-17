@@ -2,16 +2,16 @@
 version: "3.1"
 
 intents:
+  - goodbye
+  - bot_challenge
   - saluto
-  - addio
-  - contento
-  - conforto
   - felice
   - umore_positivo
-  - goodbye
-  - bot_challange
   - umore_negativo
   - conferma
+  - addio
+  - conforto
+  - contento
   - rifiuto
   - ask_geografia
   - ask_popolazione
@@ -23,7 +23,6 @@ intents:
   - perchè_strumento
   - istituto_professionale
   - orientamento
-  - ask_about_person
   - chiedi_persona
 
 entities:
@@ -43,7 +42,7 @@ responses:
     - text: "Arrivederci! A presto."
   utter_contento:
     - text: "Sono felice di sentire che stai bene!"
-  utvvvvter_conforto:
+  utter_conforto:
     - text: "Mi dispiace sentire che non stai bene
       Posso aiutarti in qualche modo?"
   utter_felice:
@@ -54,6 +53,8 @@ responses:
     - text: "Sì, sono un bot!"
   utter_greet:
     - text: "Ciao! Come posso aiutarti?"
+  utter_rifiuto:
+    - text: "mi dispiace, non posso!"
   utter_popolazione:
     - text: "Il Comune di Campomarino ha una popolazione che supera
       i 7000 abitanti,i
@@ -137,10 +138,11 @@ actions:
   - utter_dirigente
   - utter_organizzazione
   - utter_primaria
-  - utter_strumento_musicale
   - utter_perchè_strumento
   - utter_professionale
   - utter_orientamento
   - action_give_info_about_mario
   - action_unknown_person
   - action_check_person_name
+  - utter_rifiuto
+  - action_reset_all_slots
