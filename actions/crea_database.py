@@ -13,10 +13,6 @@ CREATE TABLE people (
 )
 ''')
 
-# Inserisci alcuni dati di esempio
-cursor.execute("INSERT INTO people (name, info) VALUES (?, ?)", ("Mario Rossi", "Mario Rossi è un famoso ingegnere italiano."))
-# Aggiungi altre righe come questa per altri nomi
 
-# Commit delle modifiche e chiusura
 conn.commit()
 conn.close()

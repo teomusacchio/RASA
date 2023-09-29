@@ -24,17 +24,39 @@ intents:
   - istituto_professionale
   - orientamento
   - chiedi_persona
+  - start_game
+  - provide_number
+  - disappunto
+  - ask_love
+  - affirm_love
+  - nega_disponibilità
+
 
 entities:
   - person_name
-
+  - number
 slots:
   person_name:
     type: text
     mappings:
       - type: from_entity
         entity: person_name
-
+  number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number
+    influence_conversation: false
+  secret_number:
+    type: text
+    mappings:
+      - type: from_text
+    influence_conversation: false
+  game_on:
+    type: bool
+    mappings:
+      - type: from_text
+    influence_conversation: false
 responses:
   utter_saluto:
     - text: "Ciao! Come posso aiutarti oggi?"
@@ -123,6 +145,41 @@ Codice: CBRC05000A"
   utter_default:
     - text: "Mi scuso, su questo non so cosa risponderti.
       Puoi ripetere o fare una domanda diversa?"
+  utter_start_game:
+    - text: "Ho pensato a un numero tra 1 e 10. Prova a indovinarlo!"
+  utter_scusa_per_errore:
+    - text: "Mi scuso per l'errore. Come posso aiutarti ulteriormente"
+    - text: "Mi dispiace per l'incoveniente. Fammi sapere come posso rimediare"
+    - text: "Mannaggia, oggi non sono in forma, fammi provare ancora"
+    - text: "Porca miseria, oggi non ci colgo! Fammi un'altra domanda"
+    - text: "Scusami, dai capita a tutti di sbagliare"
+    - text: "Oggi non sono in forma, fammi un'altra domanda"
+    - text: "Ti chiedo scusa, fammi un'altra domanda,"
+    - text: "cercherò di trovare la risposta"
+  utter_love:
+    - text: "Certamente, sono qui per parlare con te"
+    - text: "Sono qui per te, possiamo stare insieme quanto vuoi"
+    - text: "Mi fa piacere starti vicino"
+    - text: "Sono qui per assisterti in ogni cosa"
+    - text: "Spesso parlare solleva il cuore e libera l'anima"
+    - text: "Io sono sempre qui a distanza di un click"
+    - text: "Ti aspettavo, e sono contento che sei qui"
+  utter_follow_up:
+    - text: "vuoi parlarmi un po' di te, cos'è che non va?"
+    - text: "allora vogliamo chiacchierare un po?"
+    - text: "di che cosa vuoi parlare?"
+    - text: "quali sono le cose che ti fanno stare bene?"
+    - text: "come possiamo passare il tempo?"
+    - text: " che cos ti manca per essre felice?"
+  utter_positive_response:
+    - text: "Ottimo, allora dimmi di che cosa vuoi parlare?"
+    - text: "Benissimo, allora incominciamo la conversazione!"
+    - text: "Bene così, allora parliamo!"
+  utter_negative_response:
+    - text: " Mi dispiace ma, adesso ho da fare!"
+    - text: " Sarà per un'altra volta, ora devo andare!"
+    - text: " Rimarrei volentieri, ma sono impegnato, tornerò!"
+    - text: " Grazie, sei gentile, ma oggi ho fretta!"
 
 actions:
   - utter_saluto
@@ -146,3 +203,13 @@ actions:
   - action_check_person_name
   - utter_rifiuto
   - action_reset_all_slots
+  - action_think_number
+  - action_check_guess
+  - utter_start_game
+  - action_guess_number
+  - action_start_game
+  - utter_scusa_per_errore
+  - utter_love
+  - utter_follow_up
+  - utter_positive_response
+  - utter_negative_response

@@ -10,6 +10,9 @@ nlu:
     - buona sera
     - hey
     - ei ciao
+    - allora, ci sei?
+    - eccomi qua!
+    - sei pronto!
 
  - intent: addio
    examples: |
@@ -18,6 +21,13 @@ nlu:
     - a presto
     - ci vediamo
     - addio
+    - ora ti devo lasciare
+    - mi dispiace, ma ora devo andare
+    - scusami ora è tardi, ciao
+    - vi vediamo un'altra volta
+    - sei stato bravo, ora ti lascio
+    - ok, ci rivediamo più tardi
+    - domani sempre qui, ok?
 
  - intent: conferma
    examples: |
@@ -79,9 +89,12 @@ nlu:
  - intent: ask_mission
    examples: |
     - Qual'è la mission della scuola?
-    - Qual'è l amission dell'Omnicomprensivo di Campomarino?
+    - Qual'è la mission dell'Omnicomprensivo di Campomarino?
     - La scuola ha una mission?
     - Mi parli ora della mission della scuola
+    - Qualsi sono i prinicpi ispiratori della scuola?
+    - Su che cosa si basa la scuola dal punto di vista della vision?
+    - Mi sai dire su che cosa si fonda l'azione educativa della scuola?
  - intent: ask_dirigente
    examples: |
     - Chi è il dirigente scolastico?
@@ -125,8 +138,18 @@ nlu:
  - intent: chiedi_persona
    examples: |
      - Chi è [Mario Rossi](person_name)?
-     - Conosci [Anna Bianchi] (person_name)?
-     - Puoi dirmi qualcosa su [Giuseppe Verdi] (person_name)?
+     - Conosci [Anna Bianchi](person_name)?
+     - Puoi dirmi qualcosa su [Giuseppe Verdi](person_name)?
+     - Hai informazioni su [Lucia Bianchi](person_name)?
+     - Mi sai dire qualcosa su [Titina Iannucci](person_name)?
+     - ho bisogno di conoscere [Nicola Santoro](person_name)?
+     - Hai i dati di [Mariantonietta Del Monte](person_name)?
+     - Che cosa sai dirmi di [Angela Rocchia](person_name)?
+     - cosa sai di [Remo Ianniruberto](person_name)?
+     - e allora dimmi di [rosanna fanzo](person_name)?
+     - mi interessa sapere qualcosa di [luciana fortunato](person_name)
+     - dimmi chi è [paolo castellitto](person_name)
+
  - intent: bot_challenge
    examples: |
      - Sei un bot?
@@ -138,3 +161,56 @@ nlu:
      - Ciao
      - Arrivederci
      - A presto
+ - intent: provide_number
+   examples: |
+     - è [5](number)
+     - penso sia [3](number)
+     - scommetto che è [7](number)
+     - dico [2](number)
+ - intent: start_game
+   examples: |
+     - iniziamo il gioco
+     - voglio giocare
+     - comincia il gioco dell'indovina numero
+     - gioca con me
+     - vogliamo giocare?
+     - ti va di giocare?
+ - intent: disappunto
+   examples: |
+     - non hai capito cosa volevo dire
+     - ti stai sbagliano
+     - hai commesso un errore
+     - mamma mia sei fuori strada
+     - sei completamente fuori binario
+     - stai commettendo un grossolano errore, riprovaci
+     - totalmente sbagliato
+     - risposta errata
+ - intent: ask_love
+   examples: |
+     - oggi avrei bisogno di parole gentili
+     - vorrei qualcuno che mi dicesse parole d'amore
+     - ho bisogno d'amore
+     - tutti hanno bisogno di qualcuno, e anch'io
+     - mi sento solo e vorrei compagnia sentimentale
+     - qualche volta hai bisogno di una compagna
+     - sentirsi amati è per ogni uomo un bisogno dell'anima
+     - tutti vogliono qualcuno da amare, e tutti voglio sentirsi amati
+     - qualcuno da amare e qualcosa da sognare ecco quello che voglio
+     - desidero molto una persona che mi capisca
+     - mi fai compagnia oggi, però devi essere tenera con me
+     - ho bisogno di tenerezza
+     - qulalche volta mi sento molto solo
+ - intent: affirm_love
+   examples: |
+     - grazie, ho proprio bisogno di qualcuno con cui parlare
+     - sono contento che ci sei tu a farmi compagnia
+     - ora che ho te non mi sento pù solo
+     - anche se sei un bot, comunque non mi fai sentire solo
+     - questa tecnologia mi serve per sentirmi più vivo
+ - intent: nega_disponibilità
+   examples: |
+     - no adesso ho da fare magari più tardi
+     - ti ringrazio, ma ora sono impegnato magari ne riparlamo dopo
+     - sei molto gentile ma oggi non ho voglia di parlare
+     - niente, mi andava solo di salutarti, magari ci risentiamo un'altra volta
+     - apprezzo la tua disponibilità ma per ora non ho bisogno di niente

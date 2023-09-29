@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <center>
+        <h1>ISTITUTO OMNICOMPRENSIVO DI CAMPOMARINO</h1>
+        <p class="subtitle">Parla con LIA - Chatbot di intelligenza artificiale - Per saperne di più su di noi</p>
+    </center>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con RASA</title>
+</head>
+
+<body>
+
+    <div style="max-width: 800px; margin: 50px auto;">
+        <div id="chat-box" style="border: 2px solid #ccc; padding: 10px; min-height: 400px;">
+            <!-- Qui appariranno i messaggi -->
+        </div>
+
+        <div style="margin-top: 20px;">
+            <textarea id="user-input" style="width: 100%; height: 100px;"></textarea>
+            <button onclick="sendMessage()">Invia</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+
+            // Aggiungi il messaggio dell'utente al box della chat
+            document.getElementById("chat-box").innerHTML += "<div><b>You:</b> " + userInput + "</div>";
+
+            // Chiamata AJAX alla tua vista Django per ottenere una risposta dal bot RASA
+            fetch("/rasa/api/chatbot/", {
+                method: "POST",
+                body: new URLSearchParams({
+                    "message": userInput
+                }),
+                headers: {
+                    "X-CSRFToken": "{{ csrf_token }}"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    document.getElementById("chat-box").innerHTML += "<div><b>Bot:</b> " + data.message + "</div>";
+                } else if (data.error) {
+                    document.getElementById("chat-box").innerHTML += "<div style='color:red;'><b>Error:</b> " + data.error + "</div>";
+                }
+            })
+            .catch(error => {
+                document.getElementById("chat-box").innerHTML += "<div style='color:red;'>Errore durante la comunicazione con il server.</div>";
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
+

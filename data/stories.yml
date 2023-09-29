@@ -29,7 +29,7 @@ stories:
       - action: utter_saluto
       - intent: umore_positivo
       - action: utter_greet
-  - story: Chiedi della geofrafia di Campomarino
+  - story: Chiedi della geografia di Campomarino
     steps:
       - intent: ask_geografia
       - action: utter_geografia
@@ -90,3 +90,23 @@ stories:
     steps:
       - intent: rifiuto
       - action: utter_rifiuto
+  - story: Gioco dell'indovina numero
+    steps:
+      - intent: start_game
+      - action: action_start_game
+      - action: utter_start_game
+      - intent: provide_number
+      - action: action_guess_number
+  - story: reazione a  disappunto
+    steps:
+      - intent: disappunto
+      - action: utter_scusa_per_errore
+  - story: desiderio d'amore
+    steps:
+      - intent: ask_love
+      - action: utter_love
+      - action: utter_follow_up
+      - intent: affirm_love
+      - action: utter_positive_response
+      - intent: nega_disponibilità
+      - action: utter_negative_response
