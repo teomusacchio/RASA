@@ -1,0 +1,17 @@
+---
+version: "3.1"
+nlu:
+ - intent: turpiloquio
+   examples: |
+     - stronzo, cretino, scemo, vaffanculo, coglione, bastado, figlio di puttana
+     - sei un cretino, sei uno scemo, sei un fallito, sei un buono a nulla
+     - mi fai schivo, mi fai pena, mi
+     - fai pietà, sei un fallito, sei un buono a nulla
+     - se ti prendo ti  uccido, ma ammazzati, non hai un minimo di cervolleo
+     - hai la faccia come il culo; ma li mortacci tua,
+     - sei brutto come una merda;
+     - pezzo di merda, pezzo di caca sei un miserabile, fottuto e rincoglionito
+     - mi fai pena, quando ti vedo vomito, sei peggio di una malattia,
+     - sei una cosa ignobile,
+     - cazzone, culattone, frocio di merda,i
+     - mamma mia che cialtrone!

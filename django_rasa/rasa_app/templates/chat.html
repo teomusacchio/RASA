@@ -27,6 +27,19 @@
     </div>
 
     <script>
+        function convertUrlsToLinks(text) {
+    // Controlla se il link è già stato convertito in un tag <a>
+    var re = /<a [^>]+>([^<]+)<\/a>/g;
+    if (re.test(text)) {
+        return text; // se è già stato convertito, ritorna il testo come sta
+    }
+
+    // Altrimenti, converti gli URL in link
+    return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+}
+
+
+
         function sendMessage() {
             var userInputElem = document.getElementById("user-input");
             var userInput = userInputElem.value;
@@ -51,7 +64,7 @@
             .then(data => {
                 if (data.message) {
                     var newMessage = document.createElement("p");
-                    newMessage.textContent = "Bot: " + data.message;
+                    newMessage.innerHTML = "Bot: " + convertUrlsToLinks(data.message);
                     chatBox.appendChild(newMessage);
 
                     // Svuota il campo di testo

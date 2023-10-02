@@ -1,0 +1,9 @@
+---
+version: '3.1'
+stories:
+ - story: richiesta documento
+   steps:
+    - intent: request_documento
+      entities:
+       - nome_documento: "Vademecum della sicurezza"
+    - action: action_mostra_documento

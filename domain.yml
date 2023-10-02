@@ -30,11 +30,14 @@ intents:
   - ask_love
   - affirm_love
   - nega_disponibilità
+  - turpiloquio
+  - request_documento
 
 
 entities:
   - person_name
   - number
+  - nome_documento
 slots:
   person_name:
     type: text
@@ -180,6 +183,13 @@ Codice: CBRC05000A"
     - text: " Sarà per un'altra volta, ora devo andare!"
     - text: " Rimarrei volentieri, ma sono impegnato, tornerò!"
     - text: " Grazie, sei gentile, ma oggi ho fretta!"
+  utter_turpiloquio:
+    - text: "Mi dispieace che usi questo linguaggio, non è accettabile"
+    - text: "Questo tipo di parole sono offensive, devi evitarle"
+    - text: "Non è bello parlare in questo modo, anzi è decisamente volgare"
+    - text: "Se ti diverti così, non ti invidio"
+    - text: "Fai pure, ma sappi che non condivido questo linguaggio"
+    - text: "Non è un modo di parlare elegante, e mi fermo qui"
 
 actions:
   - utter_saluto
@@ -213,3 +223,5 @@ actions:
   - utter_follow_up
   - utter_positive_response
   - utter_negative_response
+  - utter_turpiloquio
+  - action_mostra_documento
