@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <center>
+        <h1>ISTITUTO OMNICOMPRENSIVO DI CAMPOMARINO</h1>
+        <p class="subtitle">Parla con LIA - Chatbot di intelligenza artificiale - Per saperne di più su di noi</p>
+    </center>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con RASA</title>
+</head>
+
+<body>
+
+    <div style="max-width: 800px; margin: 50px auto;">
+        <div id="chat-box" style="border: 2px solid #ccc; padding: 10px; min-height: 400px;">
+            <!-- Qui appariranno i messaggi -->
+        </div>
+
+        <div style="margin-top: 20px;">
+            <textarea id="user-input" style="width: 100%; height: 100px;"></textarea>
+            <!-- Input nascosto per il CSRF token -->
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <button onclick="sendMessage()">Invia</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInputElem = document.getElementById("user-input");
+            var userInput = userInputElem.value;
+
+            // Recuperiamo il token CSRF dall'input nascosto
+            var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            // ...
+
+            // Chiamata AJAX alla tua vista Django per ottenere una risposta dal bot RASA
+            fetch("/rasa/api/chatbot/", {
+                method: "POST",
+                body: new URLSearchParams({
+                    "message": userInput
+                }),
+                headers: {
+                    "X-CSRFToken": csrfToken
+                }
+            })
+            .then(response => {
+                // ...
+            })
+            .catch(error => {
+                console.error("Errore nella chiamata AJAX:", error);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
+

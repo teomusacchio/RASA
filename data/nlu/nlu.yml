@@ -50,13 +50,6 @@ nlu:
     - tutto perfetto
     - sono contento
 
- - intent: umore_negativo
-   examples: |
-    - sto male
-    - sono triste
-    - non sto bene
-    - sono sconsolato
-
  - intent: conforto
    examples: |
     - non ti preoccupare

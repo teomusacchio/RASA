@@ -64,10 +64,31 @@ nlu:
      - Mi puoi mostrare il [Vademecum della sicurezza](nome_documento)?
      - Ho bisogno del [Vademecum della sicurezza](nome_documento)
      - Sto cercando il link del [Vademecum della sicurezza](nome_documento)
-     - Mi poi fornire informazini sul
-       [Vademecum della sicurezza](nome_documento)
-     - Mostrami il [Verbale del Collegio docenti
-       n. 1 del 2023](nome_documento)
+     - Mi poi fornire informazioni sul [Vademecum della sicurezza](nome_documento)
+     - Mostrami il [Verbale del Collegio docenti n. 1 del 2023](nome_documento)
      - Dammi il [PTOF](nome_documento)
-     - Avrei necessità di leggere il
-       [Piano dell'Offerta Formativa](nome_documento)
+     - Avrei necessità di leggere il [Piano dell'Offerta Formativa](nome_documento
+     - Mi dai il link del [Regolamento acquisti](nome_documento)?
+     - Posso avere il documento  [Attività negoziale](nome_documento)?
+     - Dammi l'avviso [Avviso assemblea sindacale](nome_documento)
+     - Avrei bisogno del link dei [Conferimenti incarichi](nome_documento)
+ - intent: list_all_documents
+   examples: |
+     - Mi mostri tutti i documenti disponibili!
+     - Mi fai vedere quali documenti sono disponibili
+     - Quali documenti ci sono?
+     - Dammi i documenti che hai?
+     - Quali documenti ci sono?
+     - Fammi vedere i documenti con i link
+     - Quali testi hai sulla scuola?
+     - Dammi tutte le risorse che hai
+ - intent: search_documents
+   examples: |
+     - Cerca [documento XYZ](parola_chiave)
+     - Hai informazioni su [ABC](parola_chiave))?
+     - Voglio sapere di più su [testo specifico](parola_chiave)
+     - Dammi [xyz](parola_chiave)
+     - Voglio [dder err] (parola_chiave)
+     - Trovami [abc def](parola_chiave)
+     - Trova [il curricolo di teodoro musacchio](parola_chiave)
+     - Qualcosa su [contratto di lavoro] (parola_chiave)

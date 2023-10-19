@@ -7,3 +7,11 @@ stories:
       entities:
        - nome_documento: "Vademecum della sicurezza"
     - action: action_mostra_documento
+ - story: list all documents
+   steps:
+    - intent: list_all_documents
+    - action: action_list_all_documents
+ - story: cerca documenti in Elasticseach
+   steps:
+    - intent: search_documents
+    - action: action_search_elasticsearch

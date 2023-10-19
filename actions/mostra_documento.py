@@ -9,15 +9,19 @@ class ActionMostraDocumento(Action):
     def name(self) -> str:
         return "action_mostra_documento"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker, domain: dict) -> list:
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: dict) -> list:
+
         # Collegamento a Elasticsearch
         es = Elasticsearch(["http://localhost:9200"])
-        # Ottenere l'ultimo messaggio dell'utente (la query di ricerca)
+
+        # Ottenere l'ultimo messaggio dell'utente
         query = tracker.latest_message.get('text')
 
         try:
-            # Eseguire la ricerca in Elasticsearch
+            # Eseguire la ricerca full-text in Elasticsearch
             response = es.search(index="documenti", body={
                 "query": {
                     "match": {
@@ -29,18 +33,24 @@ class ActionMostraDocumento(Action):
             hits = response.get('hits', {}).get('hits', [])
 
             if hits:
-                doc_info = hits[0]['_source']['nome_documento']
-                link = hits[0]['_source']['url_documento']
-                response_text = f"Documento trovato: {doc_info}. Link al documento: <a href='{link}'>Clicca qui</a>"
-                dispatcher.utter_message(text=mark_safe(response_text))
+                response_texts = []
+                for hit in hits:
+                    doc_info = hit['_source']['nome_documento']
+                    link = hit['_source']['url_documento']
+                    text = (f"Documento: {doc_info}. "
+                            f"Link: <a href='{link}'>Clicca qui</a>")
+                    response_texts.append(text)
+
+                # Unisci i risultati in un singolo messaggio
+                dispatcher.utter_message(
+                    text=mark_safe('\n'.join(response_texts)))
             else:
                 dispatcher.utter_message(text="Documento non trovato.")
 
         except Exception as e:
             # Stampa l'eccezione per diagnosticare il problema
             print(str(e))
-            # Puoi anche inviare un messaggio all'utente
-            # per informarlo che c'è stato un problema
-            dispatcher.utter_message(text="Si è verificato un errore durante la ricerca. Riprova più tardi.")
-
-        return []
+            # Invia un messaggio all'utente
+            dispatcher.utter_message(
+                text="Si è verificato un errore. Riprova più tardi."
+            )

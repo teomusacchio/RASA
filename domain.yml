@@ -32,12 +32,14 @@ intents:
   - nega_disponibilità
   - turpiloquio
   - request_documento
-
+  - list_all_documents
+  - search_documents
 
 entities:
   - person_name
   - number
   - nome_documento
+  - parola_chiave
 slots:
   person_name:
     type: text
@@ -65,17 +67,33 @@ responses:
     - text: "Ciao! Come posso aiutarti oggi?"
   utter_addio:
     - text: "Arrivederci! A presto."
+    - text: "Ciao!"
+    - text: "Torna appena puoi!"
+    - text: "Mi fa piacere rivederti, a presto!"
   utter_contento:
     - text: "Sono felice di sentire che stai bene!"
   utter_conforto:
-    - text: "Mi dispiace sentire che non stai bene
-      Posso aiutarti in qualche modo?"
+    - text: "Mi dispiace sentire che non stai bene!"
+    - text: "Posso aiutarti in qualche modo?"
+    - text: "Tutti abbiamo dei momenti negativi, poi passano!"
+    - text: "Non mollare, si forte! Passerà!"
+    - text: "Predi la vita per quella che è, e vai avanti!"
+    - text: "Prova ad uscire, muoversi fa bene!"
+    - text: "A volte sembra tutto negativo, poi le situazioni si risolvono"
+    - text: "Bisogna affrontare le situazioni con forza e coraggio"
+    - text: "Tutti passano dei momenti negativi, è la 
+             nostra esistenza che è così"
   utter_felice:
     - text: "Sono contento di aver potuto aiutarti!"
   utter_goodbye:
     - text: "Arrivederci!"
   utter_iamabot:
     - text: "Sì, sono un bot!"
+    - text: "Sono un bot!"
+    - text: "Sono solo un piccolo bot!"
+    - text: "Sono un piccolo programma di intelligenza artificiale"
+    - text: "Mi puoi considerare un assistente digitale"
+    - text: "Cerco solo di essere utile!"
   utter_greet:
     - text: "Ciao! Come posso aiutarti?"
   utter_rifiuto:
@@ -225,3 +243,5 @@ actions:
   - utter_negative_response
   - utter_turpiloquio
   - action_mostra_documento
+  - action_list_all_documents
+  - action_search_elasticsearch

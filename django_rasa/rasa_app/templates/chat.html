@@ -1,7 +1,6 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
     <center>
@@ -27,19 +26,6 @@
     </div>
 
     <script>
-        function convertUrlsToLinks(text) {
-    // Controlla se il link è già stato convertito in un tag <a>
-    var re = /<a [^>]+>([^<]+)<\/a>/g;
-    if (re.test(text)) {
-        return text; // se è già stato convertito, ritorna il testo come sta
-    }
-
-    // Altrimenti, converti gli URL in link
-    return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
-}
-
-
-
         function sendMessage() {
             var userInputElem = document.getElementById("user-input");
             var userInput = userInputElem.value;
@@ -57,14 +43,14 @@
                     "message": userInput
                 }),
                 headers: {
-                    "X-CSRFToken": "{{ csrf_token }}"
+                //   "X-CSRFToken": "{{ csrf_token }}"
                 }
             })
             .then(response => response.json())
             .then(data => {
                 if (data.message) {
                     var newMessage = document.createElement("p");
-                    newMessage.innerHTML = "Bot: " + convertUrlsToLinks(data.message);
+                    newMessage.innerHTML = "Bot: " + data.message; // Modifica qui
                     chatBox.appendChild(newMessage);
 
                     // Svuota il campo di testo
@@ -85,8 +71,6 @@
             }
         });
     </script>
-
 </body>
-
 </html>
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati di ricerca</title>
+</head>
+<body>
+    <h1>Risultati di ricerca</h1>
+    
+    <!-- Modulo di ricerca -->
+    <form action="{% url 'search_view' %}" method="get">
+        <input type="text" name="q" placeholder="Inserisci le parole chiave">
+        <input type="submit" value="Cerca">
+    </form>
+    
+    <!-- Risultati di ricerca -->
+    <ul>
+        {% for path in file_paths %}
+            <li>
+                {{ path }} - <a href="{% url 'download_file' file_path=path%}">Scarica</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

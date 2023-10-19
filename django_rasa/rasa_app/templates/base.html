@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati di ricerca ciao</title>
+</head>
+<body>
+    <h1>Risultati di ricerca ciao</h1>
+    <ul>
+        {% for path in file_paths %}
+            <li>{{ path }}</li>
+        {% endfor %}
+    </ul>
+
+    {% for file_path in file_paths %}
+        <a href="{% url 'download_file' file_path=file_path|slice:1 %}">Scarica {{ file_path }}</a><br>
+    {% endfor %}
+</body>
+</html>
+

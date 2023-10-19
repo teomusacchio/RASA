@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <center>
+    <title>Risultati di ricerca </title>
+    </center>
+</head>
+<body> <center>
+    <h1>Risultati di ricerca </h1> 
+    <!-- Modulo di ricerca --> </center>
+    <form action="{% url 'search_view' %}" method="get">
+ <center>       
+	 <input type="text" name="q" placeholder="Inserisci le parole chiave">
+	 <input type="submit" value="Cerca"> </center>
+    </form>
+    <!-- Risultati di ricerca -->
+    <ul>
+        {% for path in file_paths %}
+            <li>
+                {{ path }} - <a href="{% url 'download_file' file_path=path %}">Scarica</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

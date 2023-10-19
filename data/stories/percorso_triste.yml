@@ -1,0 +1,11 @@
+---
+version: '3.1'
+stories:
+  - story: percorso triste
+    steps:
+      - intent: saluto
+      - action: utter_saluto
+      - intent: umore_negativo
+      - action: utter_conforto
+      - intent: addio
+      - action: utter_addio

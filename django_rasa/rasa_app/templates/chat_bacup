@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <center>
+        <h1>ISTITUTO OMNICOMPRENSIVO DI CAMPOMARINO</h1>
+        <p class="subtitle">Parla con LIA - Chatbot di intelligenza artificiale - Per saperne di più su di noi</p>
+    </center>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con RASA</title>
+</head>
+
+<body>
+
+    <div style="max-width: 800px; margin: 50px auto;">
+        <div id="chat-box" style="border: 2px solid #ccc; padding: 10px; min-height: 400px;">
+            <!-- Qui appariranno i messaggi -->
+        </div>
+
+        <div style="margin-top: 20px;">
+            <textarea id="user-input" style="width: 100%; height: 100px;"></textarea>
+            <button onclick="sendMessage()">Invia</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var userInputElem = document.getElementById("user-input");
+            var userInput = userInputElem.value;
+
+            // Aggiungi il messaggio dell'utente al box della chat
+            var chatBox = document.getElementById("chat-box");
+            var userMessageElem = document.createElement("p");
+            userMessageElem.textContent = "Tu: " + userInput;
+            chatBox.appendChild(userMessageElem);
+
+            // Chiamata AJAX alla tua vista Django per ottenere una risposta dal bot RASA
+            fetch("/rasa/api/chatbot/", {
+                method: "POST",
+                body: new URLSearchParams({
+                    "message": userInput
+                }),
+                headers: {
+                //   "X-CSRFToken": "{{ csrf_token }}"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    var newMessage = document.createElement("p");
+                    newMessage.textContent = "Bot: " + data.message;
+                    chatBox.appendChild(newMessage);
+
+                    // Svuota il campo di testo
+                    userInputElem.value = "";
+                } else {
+                    console.error("Errore nella risposta del bot:", data.error);
+                }
+            })
+            .catch(error => console.error("Errore nella chiamata AJAX:", error));
+        }
+
+        // Permetti l'invio del messaggio premendo il tasto 'Invio'
+        var textArea = document.getElementById("user-input");
+        textArea.addEventListener('keydown', function(e) {
+            if (e.keyCode === 13 && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+

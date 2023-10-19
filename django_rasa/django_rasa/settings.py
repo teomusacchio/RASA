@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-xu^acgm-x)txi^)q(vsimb0b671u*wt1kgq=4wtb%+$dasph1*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['didatticafutura.it','151.3.180.176', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['didatticafutura.it',
+                 '151.3.180.176', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,17 +38,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rasa_app'
+    'rasa_app',
+    'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'django_rasa.urls'
@@ -126,7 +134,31 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # settings.py
 
 # Abilita il supporto HTTPS
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = False
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
+ELASTICSEARCH_HOST = 'localhost'
+ELASTICSEARCH_PORT = 9200
+LOGIN_REDIRECT_URL = '/rasa/search/'  # o l'URL che preferisci
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "https://didatticafutura.it",
+    "http://didatticafutura.it",
+    "http://www.didatticafutura.it",
+    "https://www.didatticafutura.it",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "http://didatticatura.it"
+    "https://didatticafutura.it"
+
+]
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': '525515403594-3kh1inqn2g7adph37vapn6upd3echk4g.apps.googleusercontent.com',
+            'secret': 'COCSPX-U0D9XIiY6viymQfkHBNQXW23df_2',
+            'key': 'CHIAVE_OPZIONALE',
+        }
+    }
+}

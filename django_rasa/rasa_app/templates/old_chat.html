@@ -27,11 +27,28 @@
     </div>
 
     <script>
+        function convertUrlsToLinks(text) {
+    // Controlla se il link è già stato convertito in un tag <a>
+    var re = /<a [^>]+>([^<]+)<\/a>/g;
+    if (re.test(text)) {
+        return text; // se è già stato convertito, ritorna il testo come sta
+    }
+
+    // Altrimenti, converti gli URL in link
+    return text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+}
+
+
+
         function sendMessage() {
-            var userInput = document.getElementById("user-input").value;
+            var userInputElem = document.getElementById("user-input");
+            var userInput = userInputElem.value;
 
             // Aggiungi il messaggio dell'utente al box della chat
-            document.getElementById("chat-box").innerHTML += "<div><b>You:</b> " + userInput + "</div>";
+            var chatBox = document.getElementById("chat-box");
+            var userMessageElem = document.createElement("p");
+            userMessageElem.textContent = "Tu: " + userInput;
+            chatBox.appendChild(userMessageElem);
 
             // Chiamata AJAX alla tua vista Django per ottenere una risposta dal bot RASA
             fetch("/rasa/api/chatbot/", {
@@ -46,17 +63,28 @@
             .then(response => response.json())
             .then(data => {
                 if (data.message) {
-                    document.getElementById("chat-box").innerHTML += "<div><b>Bot:</b> " + data.message + "</div>";
-                } else if (data.error) {
-                    document.getElementById("chat-box").innerHTML += "<div style='color:red;'><b>Error:</b> " + data.error + "</div>";
+                    var newMessage = document.createElement("p");
+                    newMessage.innerHTML = "Bot: " + convertUrlsToLinks(data.message);
+                    chatBox.appendChild(newMessage);
+
+                    // Svuota il campo di testo
+                    userInputElem.value = "";
+                } else {
+                    console.error("Errore nella risposta del bot:", data.error);
                 }
             })
-            .catch(error => {
-                document.getElementById("chat-box").innerHTML += "<div style='color:red;'>Errore durante la comunicazione con il server.</div>";
-            });
+            .catch(error => console.error("Errore nella chiamata AJAX:", error));
         }
-    </script>
 
+        // Permetti l'invio del messaggio premendo il tasto 'Invio'
+        var textArea = document.getElementById("user-input");
+        textArea.addEventListener('keydown', function(e) {
+            if (e.keyCode === 13 && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
 
 </body>
 

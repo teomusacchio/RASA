@@ -1,0 +1,31 @@
+---
+version: "3.1"
+nlu:
+ - intent: umore_negativo
+   examples: |
+    - sto male
+    - sono triste
+    - non sto bene
+    - sono sconsolato
+    - sono depresso
+    - sto di bestia
+    - mi sento una merda
+    - oggi è nera
+    - oggi è una gionrata no
+    - sono un po' depresso
+    - mi sento male
+    - soffro come un cane
+    - non so cosa ho, ma oggi non va
+    - oggi è andato tutto storto
+    - ti è mai capitato che tutto sembra negativo
+    - giornata negativa
+    - parla tu che oggi non sono in vena
+    - sto a un passo dal fare qualcosa di brutto
+    - a volte vorresti farla finita
+    - sembra che tutto congiuri contro di me
+    - ho il mondo addosso
+    - sono solo, abbandonato e sconsolato
+    - dammi un po' di conforto
+    - sono a un passo dalla- fare qualche cosa di sconsiderato
+    - hai visto quando tutto di va male?
+    - La solitudine mi opprime
