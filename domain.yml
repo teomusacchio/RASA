@@ -34,6 +34,8 @@ intents:
   - request_documento
   - list_all_documents
   - search_documents
+  - gpt2_query
+  - incipit
 
 entities:
   - person_name
@@ -64,12 +66,21 @@ slots:
     influence_conversation: false
 responses:
   utter_saluto:
+    - text: "ciao"
+    - text: "Ciao!"
     - text: "Ciao! Come posso aiutarti oggi?"
+    - text: "Buona giornata!"
+    - text: "Ciao, benvenuto!"
+    - text: "Eccomi qua! Di che cosa vogliamo parlare, oggi?"
+    - text: "Ciao, sono pronto!"
   utter_addio:
     - text: "Arrivederci! A presto."
-    - text: "Ciao!"
+    - text: "Allora ti saluto, Ciao!"
     - text: "Torna appena puoi!"
     - text: "Mi fa piacere rivederti, a presto!"
+    - text: "Stammi bene!"
+    - text: "Buona gionata, ciao!"
+    - text: "Ciao ciao!"
   utter_contento:
     - text: "Sono felice di sentire che stai bene!"
   utter_conforto:
@@ -96,8 +107,9 @@ responses:
     - text: "Cerco solo di essere utile!"
   utter_greet:
     - text: "Ciao! Come posso aiutarti?"
+    - text: " Posso fare qualcosa per te?"
   utter_rifiuto:
-    - text: "mi dispiace, non posso!"
+    - text: "Mi dispiace, non posso!"
   utter_popolazione:
     - text: "Il Comune di Campomarino ha una popolazione che supera
       i 7000 abitanti,i
@@ -202,12 +214,17 @@ Codice: CBRC05000A"
     - text: " Rimarrei volentieri, ma sono impegnato, tornerò!"
     - text: " Grazie, sei gentile, ma oggi ho fretta!"
   utter_turpiloquio:
-    - text: "Mi dispieace che usi questo linguaggio, non è accettabile"
+    - text: "Mi dispiace che usi questo linguaggio, non è accettabile"
     - text: "Questo tipo di parole sono offensive, devi evitarle"
     - text: "Non è bello parlare in questo modo, anzi è decisamente volgare"
     - text: "Se ti diverti così, non ti invidio"
     - text: "Fai pure, ma sappi che non condivido questo linguaggio"
     - text: "Non è un modo di parlare elegante, e mi fermo qui"
+  utter_proposte:
+    - text: "Potremmo parlare di tante cose, per esempio, puoi chiedermi informazioni sulla scuola"
+    - text: "Possiamo parlare della scuola; posso cercarti dettagli sul personale; possso raccontarti storie;"
+    - text: "Sono un bot che ti può assistere su tutto quanto riguarda la scuola di Campomarino"
+    - text: "Chiedimi qualsiasi cosa sulla sucuola di Campomarino e ti risponderò"
 
 actions:
   - utter_saluto
@@ -245,3 +262,5 @@ actions:
   - action_mostra_documento
   - action_list_all_documents
   - action_search_elasticsearch
+  - action_gpt2_response
+  - utter_proposte

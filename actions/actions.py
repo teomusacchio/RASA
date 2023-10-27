@@ -1,3 +1,4 @@
+from GPT2Action import ActionGPT2Response
 from subactions.action_check_person_name import ActionCheckPersonName
 from mostra_documento import ActionMostraDocumento
 from action_list_documents import ActionListAllDocuments

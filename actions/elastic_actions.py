@@ -3,10 +3,11 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from elasticsearch import Elasticsearch
+from django.http import FileResponse
 
 ELASTICSEARCH_HOST = 'localhost'
 ELASTICSEARCH_PORT = 9200
-BASE_URL = "http://didatticafutura.it:8000"
+BASE_URL = "http://didatticafutura.it"
 
 
 class ActionSearchElasticsearch(Action):
@@ -40,8 +41,9 @@ class ActionSearchElasticsearch(Action):
             return []
 
         # Altrimenti, costruisci e invia il messaggio con i link
-        response_message = "Risultati per la tua ricerca:\n" + \
-            "\n".join([f"<a href='{link}'>{link}</a>" for link in file_links])
+        response_message = "Ho trovato questi risultati per la tua ricerca:\n" + \
+            "\n".join(
+                [f"<a href='{link}' download>{link}</a>" for link in file_links])
         dispatcher.utter_message(text=response_message, html=response_message)
 
         return []

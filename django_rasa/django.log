@@ -1,0 +1,15 @@
+[2023-10-20 07:00:55 +0200] [1159601] [INFO] Starting gunicorn 21.2.0
+[2023-10-20 07:00:55 +0200] [1159601] [INFO] Listening at: http://0.0.0.0:8000 (1159601)
+[2023-10-20 07:00:55 +0200] [1159601] [INFO] Using worker: sync
+[2023-10-20 07:00:55 +0200] [1159603] [INFO] Booting worker with pid: 1159603
+[2023-10-20 07:00:55 +0200] [1159636] [INFO] Booting worker with pid: 1159636
+[2023-10-20 07:00:55 +0200] [1159637] [INFO] Booting worker with pid: 1159637
+[2023-10-20 07:00:55 +0200] [1159639] [INFO] Booting worker with pid: 1159639
+[2023-10-20 09:38:27 +0200] [1159601] [INFO] Handling signal: term
+[2023-10-20 07:38:27 +0000] [1159637] [INFO] Worker exiting (pid: 1159637)
+[2023-10-20 07:38:27 +0000] [1159636] [INFO] Worker exiting (pid: 1159636)
+[2023-10-20 07:38:27 +0000] [1159603] [INFO] Worker exiting (pid: 1159603)
+[2023-10-20 07:38:27 +0000] [1159639] [INFO] Worker exiting (pid: 1159639)
+[2023-10-20 09:38:27 +0200] [1159601] [ERROR] Worker (pid:1159639) exited with code 120
+[2023-10-20 09:38:27 +0200] [1159601] [ERROR] Worker (pid:1159639) exited with code 120.
+[2023-10-20 09:38:27 +0200] [1159601] [INFO] Shutting down: Master

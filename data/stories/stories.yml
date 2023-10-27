@@ -5,14 +5,6 @@ stories:
     steps:
       - intent: saluto
       - action: utter_saluto
-  - story: percorso triste
-    steps:
-      - intent: saluto
-      - action: utter_saluto
-      - intent: umore_negativo
-      - action: utter_conforto
-      - intent: addio
-      - action: utter_addio
   - story: conferma dopo conforto
     steps:
       - intent: saluto
@@ -114,3 +106,11 @@ stories:
     steps:
       - intent: turpiloquio
       - action: utter_turpiloquio
+  - story: chiedi a GPT-2
+    steps:
+      - intent: gpt2_query
+      - action: action_gpt2_response
+  - story: avvia una conversazione
+    steps:
+      - intent: incipit
+      - action: utter_proposte

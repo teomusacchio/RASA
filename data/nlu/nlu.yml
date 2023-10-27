@@ -5,6 +5,7 @@ nlu:
  - intent: saluto
    examples: |
     - ciao
+    - Ciao
     - salve
     - buongiorno
     - buona sera
@@ -13,11 +14,13 @@ nlu:
     - allora, ci sei?
     - eccomi qua!
     - sei pronto!
+    - Allora facciamo qualcosa?
+    - Bene, allora incomiciamo!
+
 
  - intent: addio
    examples: |
     - arrivederci
-    - ciao ciao
     - a presto
     - ci vediamo
     - addio
@@ -94,7 +97,6 @@ nlu:
 
  - intent: goodbye
    examples: |
-     - Ciao
      - Arrivederci
      - A presto
  - intent: provide_number
@@ -150,3 +152,32 @@ nlu:
      - sei molto gentile ma oggi non ho voglia di parlare
      - niente, mi andava solo di salutarti, magari ci risentiamo un'altra volta
      - apprezo la tua disponibilità ma per ora non ho bisogno di niente
+ - intent: gpt2_query
+   examples: |
+     - Dimmi qualcosa di divertente.
+     - Parlami della situazione politica italiana
+     - Parlami di Aristotele.
+     - Ho bisogno di un consiglio.
+     - Parlami della filosofia di Hegel
+     - Parlami della storia d'Italia
+     - Raccontami una storia.
+ - intent: incipit
+   examples: |
+     - Allora di che cosa vogliamo parlare oggi?
+     - Bene che cosa vuoi dirmi?
+     - Sono qui cosa puoi dirmi?
+     - Allora, dimmi cos puoi fare per me
+     - Quali sono le tue competenze?
+     - Di che cosa vogliamo parlare?
+     - Quali informazioni  puoi darmi?
+     - Che ti frulla nella tua mente digitale?
+     - non saprei cosa chiederti
+     - non ho idea di cosa posso chiedere;
+     - Non lo so, cosa possiamo fare;
+     - Non so cosa chiederti;
+     - Non ho idea di cosa poterti chiedere;
+     - Come mi puoi aiutare?
+     - Come funziona questa chat?
+     - Come funziona questo bot?
+     - Spiegami cosa posso fare?
+     - Spiegami come funziona questo bot?

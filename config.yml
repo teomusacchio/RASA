@@ -52,3 +52,5 @@ policies:
      type: SQL
      dialect: "sqlite"
      url: "sqlite:///rasa_tracker.db ."
+     max_worker_threads: 32
+

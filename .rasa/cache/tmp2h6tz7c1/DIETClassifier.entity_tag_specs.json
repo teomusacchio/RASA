@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-nome_documento",
+      "2": "I-nome_documento",
+      "3": "L-nome_documento",
+      "4": "U-nome_documento",
+      "5": "B-number",
+      "6": "I-number",
+      "7": "L-number",
+      "8": "U-number",
+      "9": "B-parola_chiave",
+      "10": "I-parola_chiave",
+      "11": "L-parola_chiave",
+      "12": "U-parola_chiave",
+      "13": "B-person_name",
+      "14": "I-person_name",
+      "15": "L-person_name",
+      "16": "U-person_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-nome_documento": 1,
+      "I-nome_documento": 2,
+      "L-nome_documento": 3,
+      "U-nome_documento": 4,
+      "B-number": 5,
+      "I-number": 6,
+      "L-number": 7,
+      "U-number": 8,
+      "B-parola_chiave": 9,
+      "I-parola_chiave": 10,
+      "L-parola_chiave": 11,
+      "U-parola_chiave": 12,
+      "B-person_name": 13,
+      "I-person_name": 14,
+      "L-person_name": 15,
+      "U-person_name": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]
